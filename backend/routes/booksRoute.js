@@ -4,7 +4,7 @@ import { Book } from '../models/bookModel.js';
 const router = express.Router();
 
 // Route for Save a new Book
-router.post('https://bookstore-mern-xcus.onrender.com/', async (request, response) => {
+router.post('/', async (request, response) => {
   try {
     if (
       !request.body.title ||
@@ -31,7 +31,7 @@ router.post('https://bookstore-mern-xcus.onrender.com/', async (request, respons
 });
 
 // Route for Get All Books from database
-router.get('https://bookstore-mern-xcus.onrender.com/', async (request, response) => {
+router.get('/', async (request, response) => {
   try {
     const books = await Book.find({});
 
@@ -46,7 +46,7 @@ router.get('https://bookstore-mern-xcus.onrender.com/', async (request, response
 });
 
 // Route for Get One Book from database by id
-router.get('https://bookstore-mern-xcus.onrender.com/:id', async (request, response) => {
+router.get('/:id', async (request, response) => {
   try {
     const { id } = request.params;
 
@@ -60,7 +60,7 @@ router.get('https://bookstore-mern-xcus.onrender.com/:id', async (request, respo
 });
 
 // Route for Update a Book
-router.put('https://bookstore-mern-xcus.onrender.com/:id', async (request, response) => {
+router.put('/:id', async (request, response) => {
   try {
     if (
       !request.body.title ||
@@ -88,7 +88,7 @@ router.put('https://bookstore-mern-xcus.onrender.com/:id', async (request, respo
 });
 
 // Route for Delete a book
-router.delete('https://bookstore-mern-xcus.onrender.com/:id', async (request, response) => {
+router.delete('/:id', async (request, response) => {
   try {
     const { id } = request.params;
 
